@@ -1,7 +1,7 @@
 
 # Bio-Page-Html
 
-Social media and contact links are the perfect way to easily get in touch online with the help of a bio page. Join Update Channel: [https://t.me/only_botz](https://t.me/only_botz)
+Social media and contact links are the perfect way to easily get in touch online with the help of a bio page. 
 
 ## Html Banner
 
@@ -21,3 +21,6 @@ Social media and contact links are the perfect way to easily get in touch online
 ## Hindi:
 - **इस कोड को खोजें:** `renderButtons(6)`
 - कुल 6 सोशल मीडिया प्लेटफॉर्म बटन पहले से जोड़े गए हैं। आप इन बटनों को 1 से 6 के बीच किसी भी संख्या में रख सकते हैं। कोड केवल उतने ही बटन दिखाएगा जितनी संख्या आप दर्ज करेंगे, और बाकी के बटन पेज से छिपा दिए जाएंगे।
+
+- <a href="https://t.me/only_botz" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; border-radius: 5px; text-decoration: none;">Join on Telegram</a>
+
