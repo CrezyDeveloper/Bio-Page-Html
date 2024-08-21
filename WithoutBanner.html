@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Powered By @Only_Botz @CrezyBotz</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    header {
+      text-align: center;
+      padding: 20px 0;
+    }
+    
+    header img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    
+    header p {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0 auto;
+      padding: 0 20px;
+      max-width: 600px;
+    }
+    
+    .important-text {
+
+  font-size: 16px; /* Increase font size for better readability */
+
+  color: #333; /* Darker color for better contrast and readability */
+
+  font-weight: 400; /* Maintain normal weight for readability */
+
+  line-height: 1.8; /* Increase line height for better readability */
+
+  text-align: justify; /* Justify text for a more polished look */
+
+  margin: 20px auto; /* Add margin for spacing */
+
+  padding: 20px; /* Add padding for better readability */
+
+  max-width: 800px; /* Increase max-width for larger text blocks */
+
+  background-color: #ffffff; /* White background for clarity */
+
+  border-radius: 8px; /* Rounded corners for a softer look */
+
+  border: 1px solid #e0e0e0; /* Light border for subtle definition */
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for emphasis */
+
+}
+    
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .new-button {
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      margin: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      display: block;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 16px;
+      width: 200px;
+      position: relative;
+      overflow: hidden;
+      animation: wobble 4s infinite; /* Apply the wobble animation */
+    }
+    
+    .new-button:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+    
+    .new-button.clicked {
+      opacity: 0.8;
+      transform: scale(0.95);
+    }
+    
+    .new-button.linkedin { background-color: #0077b5; }
+    .new-button.twitter { background-color: #1da1f2; }
+    .new-button.facebook { background-color: #1877f2; }
+    .new-button.instagram { background-color: #e4405f; }
+    .new-button.youtube { background-color: #ff0000; }
+    .new-button.github { background-color: #333; }
+    
+    .date-time-button {
+      background-color: #007bff; /* Blue background */
+      color: white; /* White text */
+      border: 1px solid #0056b3; /* Darker blue border */
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 24px;
+      margin: 20px 0;
+    }
+
+    .processing {
+      pointer-events: none;
+    }
+
+    .processing::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 255, 0.3); /* Blue overlay */
+      transition: left 3s ease-out;
+    }
+    
+    .processing.processing-active::before {
+      left: 0;
+    }
+
+    /* Additional styling for the dropdown */
+    .dropdown-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .dropdown-container select {
+      padding: 10px;
+      font-size: 16px;
+      width: 80px;
+    }
+
+    /* Wobble animation */
+    @keyframes wobble {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(5deg);
+      }
+      50% {
+        transform: rotate(-5deg);
+      }
+      75% {
+        transform: rotate(5deg);
+      }
+    }
+
+    /* Disclaimer styling */
+    .disclaimer {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #666;
+      margin-top: auto; /* Pushes the disclaimer to the bottom */
+    }
+
+    .disclaimer strong {
+      font-weight: bold;
+    }
+    
+    /* Report Owner Button styling */
+    .report-owner-button {
+      background-color: #ff0000; /* Red background */
+      color: white; /* White text */
+      border: none;
+      padding: 12px 24px;
+      margin: 20px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .report-owner-button:hover {
+      background-color: #cc0000; /* Darker red */
+      transform: scale(1.05);
+    }
+    
+    .footer-text {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="https://graph.org/file/3794b5cd59feb8bf786e1.jpg" alt="Anurag image" />
+      <button class="date-time-button" id="date-time-button"></button>
+      <p class="important-text">
+
+  🎬 <strong>Welcome to My Bio Page!</strong><br><br>
+
+  Here, you'll find everything you need for the ultimate entertainment experience. From downloading the latest movies and series to live streaming your favorite shows, we've got it all. Plus, get exclusive access to GitHub resources and Telegram bots that enhance your online streaming experience. Join us now and stay updated with the best in digital entertainment!<br><br>
+
+  स्वागत है मेरे बायो पेज पर! यहां, आपको सर्वोत्तम मनोरंजन अनुभव के लिए सभी चीजें मिल जाएंगी। नवीनतम फ़िल्में और श्रृंखलाएँ डाउनलोड करने से लेकर अपने पसंदीदा शो को लाइव स्ट्रीमिंग करने तक, हमारे पास सब कुछ है। इसके अलावा, GitHub संसाधनों और Telegram बॉट्स तक विशेष पहुंच प्राप्त करें जो आपके ऑनलाइन स्ट्रीमिंग अनुभव को बेहतर बनाते हैं। आज ही हमारे साथ जुड़ें और डिजिटल मनोरंजन में सबसे अपडेटेड रहें!
+
+</p>
+    </header>
+
+    <!-- Container for dynamic buttons -->
+    <div class="button-container" id="button-container"></div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> 
+      <br>The social media platform and contact links provided on this bio page are for your convenience. Please note that we are not responsible for the content or actions of these platforms or any third parties associated with them. By using these links, you agree to the terms and policies of the respective platforms. For any issues or inquiries, please contact us directly.
+    </div>
+    <button class="report-owner-button" id="report-owner-button">Report Owner</button>
+    
+    <!-- Footer -->
+    <div class="footer-text">© 2024 Crazy Developer All Rights Reserved Powered by crezybotz</div>
+  </main>
+  <script>
+    const buttonData = [
+      { platform: 'LinkedIn', url: 'Replace_Your_Linkedin', class: 'linkedin' },
+      { platform: 'Twitter', url: 'Replace_Your_twitter', class: 'twitter' },
+      { platform: 'Facebook', url: 'Replace_Your_Facebook', class: 'facebook' },
+      { platform: 'Instagram', url: 'Replace_Your_instagram', class: 'instagram' },
+      { platform: 'YouTube', url: 'Replace_Your_youtube', class: 'youtube' },
+      { platform: 'GitHub', url: 'https://github.com/CrezyDeveloper', class: 'github' }
+    ];
+
+    const buttonContainer = document.getElementById('button-container');
+
+    function renderButtons(count) {
+      buttonContainer.innerHTML = ''; // Clear existing buttons
+      for (let i = 0; i < count; i++) {
+        const button = buttonData[i];
+        if (button) {
+          const btn = document.createElement('button');
+          btn.className = `new-button ${button.class}`;
+          btn.textContent = button.platform;
+          btn.dataset.url = button.url;
+          
+          btn.addEventListener('click', function () {
+            // Remove processing state from all buttons
+            document.querySelectorAll('.new-button').forEach(b => {
+              b.classList.remove('processing', 'processing-active');
+            });
+            
+            // Add processing state to the clicked button
+            btn.classList.add('processing');
+            
+            // Start the processing animation
+            setTimeout(() => {
+              btn.classList.add('processing-active');
+            }, 50); // Short delay to ensure the class addition is registered before animation starts
+
+            // Open the URL after the animation delay
+            setTimeout(() => {
+              window.open(btn.dataset.url, '_blank');
+              btn.classList.remove('processing', 'processing-active');
+            }, 3000); // 3 seconds delay
+          });
+
+          buttonContainer.appendChild(btn);
+        }
+      }
+    }
+
+    function updateButtons() {
+      const count = parseInt(document.getElementById('button-count').value, 10);
+      renderButtons(count);
+    }
+
+    // Function to update the date and time
+    function updateDateTime() {
+      const now = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+      const dateTimeString = now.toLocaleDateString('en-US', options);
+      document.getElementById('date-time-button').textContent = dateTimeString;
+    }
+
+    // Initial update
+    updateDateTime();
+
+    // Update date and time every second
+    setInterval(updateDateTime, 1000);
+
+    // Render initial buttons (default to 6)
+    renderButtons(6);
+
+    // Add event listener to "Report Owner" button
+    document.addEventListener('DOMContentLoaded', function() {
+      const reportOwnerButton = document.getElementById('report-owner-button');
+      
+      // URL to redirect to when the "Report Owner" button is clicked
+      const reportOwnerUrl = 'https://telegram.me/CrezyDevelopers'; // Replace with your desired URL
+
+      // Add event listener to the button
+      reportOwnerButton.addEventListener('click', function() {
+        // Open the URL in a new tab
+        window.open(reportOwnerUrl, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
